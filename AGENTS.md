@@ -49,7 +49,12 @@ Cada tarea sigue estrictamente este ciclo:
 
 ---
 
-## 3. Comandos Estándar
+## 3. Comandos Estándar y Multiplataforma
 
-- **Verificación completa (Quality Gate):** `./scripts/check` (debe correr lint, tipos, tests y auditoría básica).
+- **Verificación completa (Quality Gate):**
+  - En macOS / Linux / Git Bash / WSL: `./scripts/check.sh`
+  - En Windows (PowerShell): `.\scripts\check.ps1`
+  - O el comando nativo del ecosistema configurado en el proyecto (`npm run check`, `composer check`, etc.).
+  - **Regla dura:** La salida debe ser código `0`. Si falla, corrige el error antes de avisar al usuario.
+- **Portabilidad de código:** Todo path debe usar separadores o APIs del lenguaje (`path.join()`, `os.path.join()`, `DIRECTORY_SEPARATOR`), evitando hardcodear barras `/` o `\` exclusivas de un SO.
 - **Entorno de desarrollo:** Consulta el README del proyecto (`npm run dev`, `php artisan serve`, `fastapi dev`, etc.).
