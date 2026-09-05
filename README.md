@@ -24,9 +24,11 @@ Un arnés de ingeniería del software diseñado específicamente para trabajar c
 ARNES-IA-V5/
 ├── AGENTS.md                  # El corazón del arnés: directrices universales (<80 líneas)
 ├── CLAUDE.md                  # Enlace universal para Claude Code
-├── README.md                  # Manifiesto y guía de uso
+├── TUTORIAL.md                # Guía paso a paso: de Brief a App funcionando
+├── README.md                  # Manifiesto y visión del arnés
 ├── scripts/
-│   └── check.sh               # Runner universal de Quality Gate (Exit 0 = Pass)
+│   ├── check.sh               # Runner Quality Gate para macOS / Linux / Git Bash
+│   └── check.ps1              # Runner Quality Gate nativo para Windows PowerShell
 ├── templates/
 │   ├── DESIGN-TEMPLATE.md     # Plantilla de diseño (Tokens YAML + North Star)
 │   ├── SPEC-TEMPLATE.md       # Plantilla de especificación EARS en archivo único
