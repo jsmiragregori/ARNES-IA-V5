@@ -33,9 +33,17 @@ mkdir mi-app && cd mi-app && git init
 Solo necesitas incorporar **3 elementos** del repositorio `ARNES-IA-V5`:
 1. **`AGENTS.md`** → Cópialo en la raíz de tu proyecto.
 2. **`CLAUDE.md`** → Cópialo en la raíz de tu proyecto.
-3. **`scripts/check.sh`** y/o **`scripts/check.ps1`** → Cópialos en la carpeta `scripts/` y adáptalos con la receta de tu lenguaje de `templates/check-examples/`.
+3. **`scripts/check.sh`** y/o **`scripts/check.ps1`** → Cópialos en la carpeta `scripts/`.
 
-### 3. Deposita tus dos documentos clave
+> 💡 **¿Bash o PowerShell?**
+> * **macOS, Linux o Windows con WSL (ej. OpenCode en WSL):** Usa siempre `./scripts/check.sh`.
+> * **Windows nativo (PowerShell / CMD):** Usa `.\scripts\check.ps1`.
+
+### 3. Deja que el agente configure el Quality Gate
+En tu primer mensaje al agente, indícale el stack elegido para que él mismo configure el runner adecuado:
+> *"Vamos a desarrollar esta app con [ej: Laravel / FastAPI / Next.js]. Configura scripts/check.sh (o check.ps1) usando la plantilla correspondiente de templates/check-examples/ y verifica que pase con exit code 0."*
+
+### 4. Deposita tus dos documentos clave
 * Guarda tu brief como **`BRIEF.md`** en la raíz (o en `input/brief.md`).
 * Copia tu sistema de diseño preferido como **`DESIGN.md`** en la raíz (puedes usar `templates/DESIGN-TEMPLATE.md` como base).
 
