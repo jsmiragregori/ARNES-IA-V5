@@ -13,39 +13,40 @@ Esta guía paso a paso te muestra exactamente cómo arrancar un proyecto desde c
 
 ## 🛠️ Fase 0: Inicialización del Proyecto (2 minutos)
 
-### 1. Inicializa tu proyecto en el stack que prefieras
-Crea la carpeta de tu nuevo proyecto con el stack elegido (Next.js, Laravel, FastAPI, Vite, etc.):
+Elige la opción que mejor se adapte a tu caso:
 
-```bash
-# Opción A (Next.js / TypeScript):
-npx create-next-app@latest mi-app
-cd mi-app
+### Opción 1: En un proyecto existente (Next.js, Laravel, FastAPI...)
+Si ya inicializaste tu framework (`npx create-next-app`, `composer create-project`, etc.), inyecta el arnés con **un solo comando**:
 
-# Opción B (Laravel / PHP):
-composer create-project laravel/laravel mi-app
-cd mi-app
+* **En macOS, Linux o Windows con WSL:**
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/jsmiragregori/ARNES-IA-V5/main/install.sh | bash
+  ```
+* **En Windows (PowerShell nativo):**
+  ```powershell
+  irm https://raw.githubusercontent.com/jsmiragregori/ARNES-IA-V5/main/install.ps1 | iex
+  ```
 
-# Opción C (Python / FastAPI):
-mkdir mi-app && cd mi-app && git init
-```
+*Este script descarga automáticamente `AGENTS.md`, `CLAUDE.md`, los runners de `scripts/` y las plantillas.*
 
-### 2. Copia los archivos base del arnés desde GitHub
-Solo necesitas incorporar **3 elementos** del repositorio `ARNES-IA-V5`:
-1. **`AGENTS.md`** → Cópialo en la raíz de tu proyecto.
-2. **`CLAUDE.md`** → Cópialo en la raíz de tu proyecto.
-3. **`scripts/check.sh`** y/o **`scripts/check.ps1`** → Cópialos en la carpeta `scripts/`.
+---
 
-> 💡 **¿Bash o PowerShell?**
-> * **macOS, Linux o Windows con WSL (ej. OpenCode en WSL):** Usa siempre `./scripts/check.sh`.
-> * **Windows nativo (PowerShell / CMD):** Usa `.\scripts\check.ps1`.
+### Opción 2: Proyecto nuevo en blanco desde GitHub (Template)
+Si quieres arrancar un repositorio completamente nuevo desde cero:
 
-### 3. Deja que el agente configure el Quality Gate
-En tu primer mensaje al agente, indícale el stack elegido para que él mismo configure el runner adecuado:
-> *"Vamos a desarrollar esta app con [ej: Laravel / FastAPI / Next.js]. Configura scripts/check.sh (o check.ps1) usando la plantilla correspondiente de templates/check-examples/ y verifica que pase con exit code 0."*
+* **Con GitHub CLI (`gh`):**
+  ```bash
+  gh repo create mi-nueva-app --template jsmiragregori/ARNES-IA-V5 --private --clone
+  cd mi-nueva-app
+  ```
+* **O desde la web de GitHub:**
+  Entra en [github.com/jsmiragregori/ARNES-IA-V5](https://github.com/jsmiragregori/ARNES-IA-V5) y pulsa el botón verde **"Use this template"** → **"Create a new repository"**.
 
-### 4. Deposita tus dos documentos clave
-* Guarda tu brief como **`BRIEF.md`** en la raíz (o en `input/brief.md`).
-* Copia tu sistema de diseño preferido como **`DESIGN.md`** en la raíz (puedes usar `templates/DESIGN-TEMPLATE.md` como base).
+---
+
+### Siguiente paso inmediato: Deposita tus documentos
+1. Guarda tu brief como **`BRIEF.md`** en la raíz (o en `input/brief.md`).
+2. Copia tu sistema de diseño preferido como **`DESIGN.md`** en la raíz.
 
 ---
 

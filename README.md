@@ -41,17 +41,27 @@ ARNES-IA-V5/
 
 ---
 
-## 🚀 Cómo Iniciar un Proyecto con ARNES-IA-V5 (en 60 segundos)
+## 🚀 Cómo Iniciar un Proyecto con ARNES-IA-V5 (en 30 segundos)
 
-1. **Copia los archivos esenciales a tu nuevo proyecto:**
-   - Copia `AGENTS.md` y `CLAUDE.md` a la raíz.
-   - Copia `scripts/check.sh` y adáptalo con el ejemplo de tu lenguaje de `templates/check-examples/`.
-2. **Si el proyecto tiene interfaz gráfica (UI-First):**
-   - Copia `templates/DESIGN-TEMPLATE.md` como `DESIGN.md` en la raíz y ajusta tus tokens/colores o usa uno de tus `DESIGN.md` preferidos.
-   - Pide al agente: *"Mapea DESIGN.md a nuestros estilos y levanta las vistas principales con datos mock"*.
-   - Valida en `http://localhost:3000` o tu servidor local.
-3. **Cuando definas la lógica funcional:**
-   - Crea `specs/<feature>.spec.md` usando `templates/SPEC-TEMPLATE.md` (o pide al agente que extraiga las sentencias EARS de tu documentación/prompt).
-   - El agente escribe los tests (TDD) para los requisitos EARS, implementa la solución y corre `./scripts/check.sh`.
-4. **Listo para commit:**
-   - Si `./scripts/check.sh` devuelve `0`, revisas el `git diff` y haces commit.
+### Opción A: En un proyecto existente (Next.js, Laravel, FastAPI...)
+Ejecuta este comando dentro de la carpeta de tu proyecto:
+- **macOS / Linux / WSL:**
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/jsmiragregori/ARNES-IA-V5/main/install.sh | bash
+  ```
+- **Windows (PowerShell nativo):**
+  ```powershell
+  irm https://raw.githubusercontent.com/jsmiragregori/ARNES-IA-V5/main/install.ps1 | iex
+  ```
+
+### Opción B: Proyecto nuevo desde GitHub Template
+- **Con GitHub CLI (`gh`):**
+  ```bash
+  gh repo create mi-nueva-app --template jsmiragregori/ARNES-IA-V5 --private --clone
+  ```
+- O pulsa el botón verde **"Use this template"** en [GitHub](https://github.com/jsmiragregori/ARNES-IA-V5).
+
+### Siguientes pasos:
+1. Coloca tu `BRIEF.md` y tu `DESIGN.md` en la raíz.
+2. Abre tu agente (Antigravity, Claude Code, Cursor, OpenCode).
+3. Sigue el flujo guiado detallado en **[`TUTORIAL.md`](TUTORIAL.md)**.
